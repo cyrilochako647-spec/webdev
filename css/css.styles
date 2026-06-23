@@ -1,6 +1,25 @@
+
 .navbar {
     background-color: #c40e0e !important;
 }
+
+
+body {
+    background: linear-gradient(
+        rgba(15, 1, 1, 0.7),
+        rgba(0, 0, 0, 0.7)
+    ),
+    url('images/background.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: white;
+    min-height: 100vh;
+}
+
 
 .navbar-brand {
     color: gold !important;
@@ -8,7 +27,11 @@
     font-weight: bold;
 }
 
+
+.nav-link {
+    transition: 0.3s;
+}
+
 .nav-link:hover {
     color: gold !important;
 }
-
