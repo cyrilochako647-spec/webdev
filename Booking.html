@@ -1,81 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking - CineMax</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking - CineMax</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">CineMax</a>
-
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link text-white" href="movies.html">Movies</a>
-                <a class="nav-link text-white" href="booking.html">Booking</a>
-                <a class="nav-link text-white" href="contact.html">Contact</a>
-                <a class="nav-link text-white" href="details.html">Details</a>
-                <a class="nav-link text-white" href="Aboutus.html">About Us</a>
-                <a class="nav-link text-white" href="signup.html">Sign Up</a>
-                <a class="nav-link text-white" href="signin.html">Sign In</a>
-            </div>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">CineMax</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <div class="navbar-nav ms-auto align-items-center">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="movies.html">Movies</a>
+          <a class="nav-link active" href="booking.html">Booking</a>
+          <a class="nav-link" href="details.html">Details</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link" href="Aboutus.html">About Us</a>
+          <a class="nav-link" href="signup.html">Sign Up</a>
+          <a class="nav-link" href="signin.html">Sign In</a>
+          <button id="themeToggle" class="dark-toggle">🌙 Dark</button>
         </div>
-    </nav>
-
-    <div class="container mt-5">
-        <h2>Book Your Tickets</h2>
-        <form action="#" method="post">
-            <div class="mb-3">
-                <label for="movie" class="form-label">Select Movie</label>
-                <select class="form-select" id="movie" name="movie" required>
-                    <option value="">Choose a movie...</option>
-                    <option value="fast_and_furious">Fast and Furious</option>
-                    <option value="the_seventh_dwarf">The Seventh Dwarf</option>
-                    <option value="train_wreck">Train Wreck</option>
-                    <option value="The boys">The boys</option>
-                    <option value="The flash">The flash</option>
-                    <option value="The batman">The batman</option>
-                    <option value="superman">The superman</option>
-                    <option value="The avengers">The avengers</option>
-                    <option value="The dark knight">The dark knight</option>
-                    <optgroup label="Comedy">
-                        <option value="The hangover">The hangover</option>
-                        <option value="The mask">The mask</option>
-                        <option value="The big lebowski">The big lebowski</option>
-
-                    </optgroup>
-                    <optgroup label="Action">
-                        <option value="John wick">John wick</option>
-                        <option value="Mad max">Mad max</option>
-                        <option value="Die hard">Die hard</option>          
-                        <option value="The matrix">The matrix</option>
-                    </optgroup>
-                    <optgroup label="Drama">
-                        <option value="The godfather">The godfather</option>
-                        <option value="Forrest gump">Forrest gump</option>
-                        <option value="The shawshank redemption">The shawshank redemption</option>
-                    </optgroup>
-                    <optgroup label="Horror">       
-                        <option value="The shining">The shining</option>
-                        <option value="Get out">Get out</option>
-                        <option value="A nightmare on elm street">A nightmare on elm street</option>
-                    </optgroup>        
-
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="tickets" class="form-label">Number of Tickets</label>
-                <input type="number" class="form-control" id="tickets" name="tickets" min="1" max="10" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Book Now</button>
-        </form>
+      </div>
     </div>
+  </nav>
 
-    <footer class="bg-dark text-white text-center py-3 mt-5">
-        &copy; 2026 CineMax. All rights reserved.
-    </footer>
+  <div class="container mt-5" style="max-width:600px;">
+    <h2 class="section-title">Book Your Tickets</h2>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>    
+    <form data-validate data-success-msg="✓ Booking confirmed! Check your email for details.">
+
+      <div class="mb-3">
+        <label for="movie" class="form-label">Select Movie</label>
+        <select class="form-select" id="movie" name="movie" required>
+          <option value="">Choose a movie...</option>
+          <optgroup label="Action">
+            <option value="fast_furious">Fast and Furious</option>
+            <option value="dark_knight">The Dark Knight</option>
+            <option value="avengers">The Avengers</option>
+            <option value="john_wick">John Wick</option>
+            <option value="mad_max">Mad Max</option>
+            <option value="die_hard">Die Hard</option>
+            <option value="matrix">The Matrix</option>
+          </optgroup>
+          <optgroup label="Comedy">
+            <option value="trainwreck">Trainwreck</option>
+            <option value="hangover">The Hangover</option>
+            <option value="mask">The Mask</option>
+            <option value="big_lebowski">The Big Lebowski</option>
+          </optgroup>
+          <optgroup label="Animation">
+            <option value="seventh_dwarf">The Seventh Dwarf</option>
+          </optgroup>
+          <optgroup label="Drama">
+            <option value="godfather">The Godfather</option>
+            <option value="forrest_gump">Forrest Gump</option>
+            <option value="shawshank">The Shawshank Redemption</option>
+          </optgroup>
+          <optgroup label="Horror">
+            <option value="shining">The Shining</option>
+            <option value="get_out">Get Out</option>
+            <option value="elm_street">A Nightmare on Elm Street</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="showtime" class="form-label">Show Time</label>
+        <select class="form-select" id="showtime" name="showtime" required>
+          <option value="">Choose a time...</option>
+          <option value="10:00">10:00 AM</option>
+          <option value="13:00">1:00 PM</option>
+          <option value="16:00">4:00 PM</option>
+          <option value="19:00">7:00 PM</option>
+          <option value="21:30">9:30 PM</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="tickets" class="form-label">Number of Tickets</label>
+        <input type="number" class="form-control" id="tickets" name="tickets" min="1" max="10" placeholder="1 – 10" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="john@example.com" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Confirm Booking</button>
+    </form>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p class="mb-1">&copy; 2026 CineMax. All rights reserved.</p>
+      <p><a href="contact.html">Contact Us</a> &middot; <a href="Aboutus.html">About</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
