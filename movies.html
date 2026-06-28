@@ -1,60 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies - CineMax</title>
-
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies - CineMax</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">CineMax</a>
 
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link text-white" href="movies.html">Movies</a>
-                <a class="nav-link text-white" href="booking.html">Booking</a>
-                <a class="nav-link text-white" href="contact.html">Contact</a>
-                <a class="nav-link text-white" href="details.html">Details</a>
-                <a class="nav-link text-white" href="Aboutus.html">About Us</a>
-                <a class="nav-link text-white" href="signup.html">Sign up </a>
-
-            </div>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">CineMax</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <div class="navbar-nav ms-auto align-items-center">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link active" href="movies.html">Movies</a>
+          <a class="nav-link" href="booking.html">Booking</a>
+          <a class="nav-link" href="details.html">Details</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link" href="Aboutus.html">About Us</a>
+          <a class="nav-link" href="signup.html">Sign Up</a>
+          <a class="nav-link" href="signin.html">Sign In</a>
+          <button id="themeToggle" class="dark-toggle">🌙 Dark</button>
         </div>
-    </nav>
+      </div>
+    </div>
+  </nav>
 
-    
-    <div class="container mt-5">
-        <h2 class="text-center">Now Showing</h2>
+  <div class="container mt-5">
+    <h2 class="section-title">Now Showing</h2>
 
-        <div class="row text-center mt-3">
-
-            <div class="col-md-4">
-                <img src="images/movie1.jpg" class="img-fluid">
-                <h5>Fast and Furious</h5>
-            </div>
-
-            <div class="col-md-4">
-                <img src="images/movie2.jpg" class="img-fluid">
-                <h5>The  seventh dwarf</h5>
-            </div>
-
-            <div class="col-md-4">
-                <img src="images/movie3.jpg" class="img-fluid">
-                <h5>Train wreck</h5>
-            </div>
-
-        </div>
+    <!-- Search / Filter (JS Feature #3) -->
+    <div class="mb-4">
+      <input type="text" id="movieSearch" class="form-control" placeholder="Search movies...">
     </div>
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-    <footer class="bg-dark text-white text-center py-3 mt-5">
-        &copy; 2026 CineMax. All rights reserved.
-    </footer>
+    <div class="row">
+
+      <div class="col-md-4 movie-card-wrapper">
+        <div class="movie-card">
+          <img src="https://m.media-amazon.com/images/I/81MC8dILhQL._AC_SY679_.jpg" alt="Fast and Furious poster">
+          <div class="movie-card-body">
+            <h5>Fast and Furious</h5>
+            <span class="badge bg-danger">Action</span>
+            <p class="text-muted mt-1" style="font-size:.85rem;">Director: Justin Lin &bull; 2024</p>
+            <a href="details.html" class="btn btn-sm btn-primary mt-1">Details</a>
+            <a href="booking.html" class="btn btn-sm btn-outline-light mt-1">Book</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 movie-card-wrapper">
+        <div class="movie-card">
+          <img src="https://m.media-amazon.com/images/I/91xkFjA5o5L._AC_SY679_.jpg" alt="The Seventh Dwarf poster">
+          <div class="movie-card-body">
+            <h5>The Seventh Dwarf</h5>
+            <span class="badge bg-success">Animation</span>
+            <p class="text-muted mt-1" style="font-size:.85rem;">Director: Harald Siepermann &bull; 2024</p>
+            <a href="details.html" class="btn btn-sm btn-primary mt-1">Details</a>
+            <a href="booking.html" class="btn btn-sm btn-outline-light mt-1">Book</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 movie-card-wrapper">
+        <div class="movie-card">
+          <img src="https://m.media-amazon.com/images/I/81tqSLoiuZL._AC_SY679_.jpg" alt="Trainwreck poster">
+          <div class="movie-card-body">
+            <h5>Trainwreck</h5>
+            <span class="badge bg-warning text-dark">Comedy</span>
+            <p class="text-muted mt-1" style="font-size:.85rem;">Director: Judd Apatow &bull; 2024</p>
+            <a href="details.html" class="btn btn-sm btn-primary mt-1">Details</a>
+            <a href="booking.html" class="btn btn-sm btn-outline-light mt-1">Book</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 movie-card-wrapper">
+        <div class="movie-card">
+          <img src="https://m.media-amazon.com/images/I/71kx5NzpKEL._AC_SY679_.jpg" alt="The Dark Knight poster">
+          <div class="movie-card-body">
+            <h5>The Dark Knight</h5>
+            <span class="badge bg-secondary">Thriller</span>
+            <p class="text-muted mt-1" style="font-size:.85rem;">Director: Christopher Nolan &bull; 2024</p>
+            <a href="details.html" class="btn btn-sm btn-primary mt-1">Details</a>
+            <a href="booking.html" class="btn btn-sm btn-outline-light mt-1">Book</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 movie-card-wrapper">
+        <div class="movie-card">
+          <img src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_SY679_.jpg" alt="The Avengers poster">
+          <div class="movie-card-body">
+            <h5>The Avengers</h5>
+            <span class="badge bg-danger">Action</span>
+            <p class="text-muted mt-1" style="font-size:.85rem;">Director: Joss Whedon &bull; 2024</p>
+            <a href="details.html" class="btn btn-sm btn-primary mt-1">Details</a>
+            <a href="booking.html" class="btn btn-sm btn-outline-light mt-1">Book</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 movie-card-wrapper">
+        <div class="movie-card">
+          <img src="https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg" alt="John Wick poster">
+          <div class="movie-card-body">
+            <h5>John Wick</h5>
+            <span class="badge bg-danger">Action</span>
+            <p class="text-muted mt-1" style="font-size:.85rem;">Director: Chad Stahelski &bull; 2024</p>
+            <a href="details.html" class="btn btn-sm btn-primary mt-1">Details</a>
+            <a href="booking.html" class="btn btn-sm btn-outline-light mt-1">Book</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p class="mb-1">&copy; 2026 CineMax. All rights reserved.</p>
+      <p><a href="contact.html">Contact Us</a> &middot; <a href="Aboutus.html">About</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
 </html>
