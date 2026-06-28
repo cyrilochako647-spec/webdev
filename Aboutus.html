@@ -1,51 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - CineMax</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - CineMax</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    
-    
-    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">CineMax</a>
 
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link text-white" href="movies.html">Movies</a>
-                <a class="nav-link text-white" href="booking.html">Booking</a>
-                <a class="nav-link text-white" href="contact.html">Contact</a>
-                <a class="nav-link text-white" href="details.html">Details</a>
-                <a class="nav-link text-white" href="Aboutus.html">About Us</a>
-                <a class="nav-link text-white" href="signup.html">Sign up</a>
-                <a class="nav-link text-white" href="signin.html">Sign in</a>  
-            </div>
-
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">CineMax</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <div class="navbar-nav ms-auto align-items-center">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="movies.html">Movies</a>
+          <a class="nav-link" href="booking.html">Booking</a>
+          <a class="nav-link" href="details.html">Details</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link active" href="Aboutus.html">About Us</a>
+          <a class="nav-link" href="signup.html">Sign Up</a>
+          <a class="nav-link" href="signin.html">Sign In</a>
+          <button id="themeToggle" class="dark-toggle">🌙 Dark</button>
         </div>
-    </nav>
-
-    <p1>
-        Cinemax is an online movie ticket booking platform that allows users to browse and book tickets for their favorite movies. Our platform provides a seamless and convenient way for movie enthusiasts to explore the latest releases, view show times, and secure their seats in advance. With a user-friendly interface and a wide selection of theaters, Cinemax aims to enhance the movie-going experience for all users. 
-    </p1>
-    <p2>
-        Our mission is to make movie ticket booking hassle-free and accessible to everyone. 
-        We strive to provide a reliable and efficient service that saves time and effort for our users. 
-        Whether you're a casual moviegoer or a dedicated , Cinemax is here to ensure that you 
-        never miss out on the magic of the big screen.
-        </p2>
-
-
-</body>
-
-</html>
-
-<footer>
-    
-    <div class="container text-center mt-5">
-        <p>&copy; 2026 CineMax. All rights reserved.</p>
+      </div>
     </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h2 class="section-title">About CineMax</h2>
+
+    <div class="row mb-5">
+      <div class="col-md-8">
+        <p style="font-size:1.1rem; line-height:1.8;">
+          CineMax is an online movie ticket booking platform that allows users to browse and book tickets for their favourite movies.
+          Our platform provides a seamless and convenient way for movie enthusiasts to explore the latest releases, view show times,
+          and secure their seats in advance. With a user-friendly interface and a wide selection of titles, CineMax aims to enhance
+          the movie-going experience for everyone.
+        </p>
+        <p style="font-size:1.1rem; line-height:1.8;">
+          Our mission is to make movie ticket booking hassle-free and accessible to all. We strive to provide a reliable and efficient
+          service that saves time and effort — whether you're a casual moviegoer or a devoted cinephile, CineMax ensures you never
+          miss out on the magic of the big screen.
+        </p>
+      </div>
+    </div>
+
+    <!-- Values -->
+    <h3 class="section-title">Our Values</h3>
+    <div class="row g-4 mb-5">
+      <div class="col-md-4">
+        <div class="info-card">
+          <h5>🎯 Simplicity</h5>
+          <p class="text-muted">We believe booking a ticket should take seconds, not minutes. Our interface is designed to get out of your way.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="info-card">
+          <h5>🤝 Accessibility</h5>
+          <p class="text-muted">Cinema is for everyone. CineMax works on any device and is designed to be inclusive and easy to use.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="info-card">
+          <h5>🔒 Trust</h5>
+          <p class="text-muted">Your data is safe with us. We use secure connections and never share your personal information.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team -->
+    <h3 class="section-title">Our Team</h3>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="info-card text-center">
+          <div style="font-size:3rem;">👨‍💻</div>
+          <h6 class="mt-2">Alex Mwangi</h6>
+          <p class="text-muted" style="font-size:.85rem;">Lead Developer</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="info-card text-center">
+          <div style="font-size:3rem;">👩‍🎨</div>
+          <h6 class="mt-2">Amina Hassan</h6>
+          <p class="text-muted" style="font-size:.85rem;">UI/UX Designer</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="info-card text-center">
+          <div style="font-size:3rem;">👨‍📊</div>
+          <h6 class="mt-2">Brian Oloo</h6>
+          <p class="text-muted" style="font-size:.85rem;">Product Manager</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="info-card text-center">
+          <div style="font-size:3rem;">👩‍💼</div>
+          <h6 class="mt-2">Cynthia Wanjiku</h6>
+          <p class="text-muted" style="font-size:.85rem;">Marketing Lead</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p class="mb-1">&copy; 2026 CineMax. All rights reserved.</p>
+      <p><a href="contact.html">Contact Us</a> &middot; <a href="Aboutus.html">About</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
