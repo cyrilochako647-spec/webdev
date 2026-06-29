@@ -1,98 +1,70 @@
 (function () {
-  const toggle = document.getElementById('themeToggle');
-  if (!toggle) return;
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
 
-  if (localStorage.getItem('cinemax-theme') === 'light') {
-    document.body.classList.add('light-mode');
-    toggle.textContent = '☀️ Light';
-  } else {
-    toggle.textContent = '🌙 Dark';
-  }
+  const apply = (dark) => {
+    document.body.classList.toggle('dark-mode', dark);
+    btn.textContent = dark ? '☀️ Light' : '🌙 Dark';
+  };
 
-  toggle.addEventListener('click', function () {
-    document.body.classList.toggle('light-mode');
-    const isLight = document.body.classList.contains('light-mode');
-    localStorage.setItem('cinemax-theme', isLight ? 'light' : 'dark');
-    toggle.textContent = isLight ? '☀️ Light' : '🌙 Dark';
+  const saved = localStorage.getItem('cinemaTheme');
+  apply(saved === 'dark');
+
+  btn.addEventListener('click', () => {
+    const isDark = document.body.classList.contains('dark-mode');
+    apply(!isDark);
+    localStorage.setItem('cinemaTheme', !isDark ? 'dark' : 'light');
   });
 })();
 
 (function () {
   const forms = document.querySelectorAll('form[data-validate]');
 
-  forms.forEach(function (form) {
-    form.addEventListener('submit', function (e) {
+  forms.forEach((form) => {
+    form.addEventListener('input', () => {
+      const old = form.querySelector('.form-alert');
+      if (old) old.remove();
+    });
+
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      let valid = true;
 
-      form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
-      form.querySelectorAll('.error-msg').forEach(el => el.remove());
+      const old = form.querySelector('.form-alert');
+      if (old) old.remove();
 
-      form.querySelectorAll('[required]').forEach(function (field) {
-        if (!field.value.trim()) {
-          markInvalid(field, 'This field is required.');
-          valid = false;
-        } else if (field.type === 'email' && !isValidEmail(field.value)) {
-          markInvalid(field, 'Please enter a valid email address.');
-          valid = false;
-        } else if (field.type === 'password' && field.value.length < 6) {
-          markInvalid(field, 'Password must be at least 6 characters.');
-          valid = false;
-        }
-      });
-
-      const pass = form.querySelector('#password');
-      const confirm = form.querySelector('#confirm_password');
-
-      if (pass && confirm && pass.value && confirm.value && pass.value !== confirm.value) {
-        markInvalid(confirm, 'Passwords do not match.');
-        valid = false;
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
       }
 
-      if (valid) {
-        showSuccess(form);
-      }
+      const msg = form.dataset.successMsg || '✓ Submitted successfully!';
+      const alert = document.createElement('div');
+      alert.className = 'form-alert alert alert-success mt-3';
+      alert.setAttribute('role', 'alert');
+      alert.textContent = msg;
+      form.appendChild(alert);
+
+      setTimeout(() => {
+        form.reset();
+        alert.remove();
+      }, 3000);
     });
   });
-
-  function markInvalid(field, message) {
-    field.classList.add('is-invalid');
-    const msg = document.createElement('div');
-    msg.className = 'invalid-feedback error-msg';
-    msg.textContent = message;
-    field.parentNode.appendChild(msg);
-  }
-
-  function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
-
-  function showSuccess(form) {
-    const existing = form.querySelector('.success-alert');
-    if (existing) existing.remove();
-
-    const alert = document.createElement('div');
-    alert.className = 'alert alert-success mt-3 success-alert';
-    alert.textContent = form.dataset.successMsg || '✓ Submitted successfully!';
-    form.appendChild(alert);
-
-    setTimeout(() => {
-      form.reset();
-      alert.remove();
-    }, 3000);
-  }
 })();
 
 (function () {
   const searchInput = document.getElementById('movieSearch');
   if (!searchInput) return;
 
-  searchInput.addEventListener('input', function () {
-    const query = this.value.toLowerCase();
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase().trim();
+    const cards = document.querySelectorAll('.movie-card-wrapper');
 
-    document.querySelectorAll('.movie-card-wrapper').forEach(function (card) {
-      const title = card.querySelector('h5').textContent.toLowerCase();
-      card.style.display = title.includes(query) ? '' : 'none';
+    cards.forEach((wrapper) => {
+      const title = wrapper.querySelector('h5');
+      const genre = wrapper.querySelector('.badge');
+      const text = ((title ? title.textContent : '') + ' ' + (genre ? genre.textContent : '')).toLowerCase();
+      wrapper.style.display = text.includes(query) ? '' : 'none';
     });
   });
 })();
